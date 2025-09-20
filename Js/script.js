@@ -145,7 +145,12 @@ function startFloatingObjects() {
 // --- Música de fondo ---
 function playBackgroundMusic() {
   const audio = document.getElementById('bg-music');
-
+  if (audio.muted) {
+    audio.muted = false;
+    audio.volume = 0.3;
+    audio.play();
+  }
+  
   if (!audio) return;
 
   // --- Opción archivo local por parámetro 'musica' ---
